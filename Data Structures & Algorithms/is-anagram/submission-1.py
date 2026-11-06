@@ -1,21 +1,8 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        
-        if len(s) != len(t):
-            return False
+        sorted_s = ''.join(sorted(s))
+        sorted_t = ''.join(sorted(t))
 
-        dict_s = {}
-        dict_t = {}
-
-        for l in s:
-            dict_s[l] = dict_s.get(l, 0) + 1
-
-        
-        for char in t:
-            dict_t[char] = dict_t.get(char, 0) + 1
-
-        return dict_s == dict_t
-
-
-
-    
+        if sorted_s == sorted_t:
+            return True
+        return False
